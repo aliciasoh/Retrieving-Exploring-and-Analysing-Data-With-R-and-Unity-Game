@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Ellen DeGeneres or Jimmy Fallon?</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	
+	<!-- Morris Charts CSS -->
+    <link href="vendor/morrisjs/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- Theme CSS -->
+    <link href="css/agency.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js" integrity="sha384-0s5Pv64cNZJieYFkXYOTId2HMA2Lfb6q2nAcx2n0RTLUnCAoTTsS0nKEO27XyKcY" crossorigin="anonymous"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js" integrity="sha384-ZoaMbDF+4LeFxg6WdScQ9nnR1QC2MIRxA1O9KWEXQwns1G8UNyIEZIQidzb0T1fo" crossorigin="anonymous"></script>
+    <![endif]-->
+
+	<script type="text/javascript">
+window.onload = function () {
+	var chart = new CanvasJS.Chart("chartContainer",
+	{
+		title:{
+			text: "Number of posts per author for Ellentv"
+		},
+                animationEnabled: true,
+		legend:{
+			verticalAlign: "bottom",
+			horizontalAlign: "center"
+		},
+		data: [
+		{        
+			indexLabelFontSize: 20,
+			indexLabelFontFamily: "Monospace",       
+			indexLabelFontColor: "darkgrey", 
+			indexLabelLineColor: "darkgrey",        
+			indexLabelPlacement: "outside",
+			type: "pie",       
+			showInLegend: true,
+			toolTipContent: "{y} - <strong>#percent%</strong>",
+			dataPoints: [
+				{  y: 30, legendText:"Ellen DeGeneres", exploded: true, indexLabel: "Ellen DeGeneres" },
+				{  y: 5, legendText:"Kathleen Bruswick", indexLabel: "Kathleen Bruswick" },
+				{  y: 4, legendText:"Caitlin Ellen",indexLabel: "Caitlin Ellen" },
+				{  y: 4, legendText:"Christopher S Osborne" , indexLabel: "Christopher S Osborne"},
+				{  y: 4, legendText:"Bebe Olivo", indexLabel: "Bebe Olivo" },
+				{  y: 3, legendText:"Cathy Silva" , indexLabel: "Cathy Silva"},
+				{  y: 3, legendText:"Simone Coccia Colaiuta" , indexLabel: "Simone Coccia Colaiuta"},
+				{  y: 3, legendText:"Sarah Chantharith" , indexLabel: "Sarah Chantharith"},
+				{  y: 3, legendText:"Brenda Stanton" , indexLabel: "Brenda Stanton"},
+
+				{  y: 3, legendText:"Shaun Ivy-Lynn Smallwood" , indexLabel: "Shaun Ivy-Lynn Smallwood"}
+			]
+		}
+		]
+	});
+	chart.render();
+	
+	var chart2 = new CanvasJS.Chart("chartContainer2",
+	{
+		title:{
+			text: "Number of posts per author for FallonTonight"
+		},
+                animationEnabled: true,
+		legend:{
+			verticalAlign: "bottom",
+			horizontalAlign: "center"
+		},
+		data: [
+		{        
+			indexLabelFontSize: 20,
+			indexLabelFontFamily: "Monospace",       
+			indexLabelFontColor: "darkgrey", 
+			indexLabelLineColor: "darkgrey",        
+			indexLabelPlacement: "outside",
+			type: "pie",       
+			showInLegend: true,
+			toolTipContent: "{y} - <strong>#percent%</strong>",
+			dataPoints: [
+				{  y: 16, legendText:"Kim Bellatoni Annicchiarico", exploded: true, indexLabel: "Kim Bellatoni Annicchiarico" },
+				{  y: 8, legendText:"Margie Harrison", indexLabel: "Margie Harrison" },
+				{  y: 7, legendText:"The Tonight Show Starring Jimmy Fallon",indexLabel: "The Tonight Show Starring Jimmy Fallon" },
+				{  y: 4, legendText:"Sharon Shin" , indexLabel: "Sharon Shin"},
+				{  y: 4, legendText:"Adeline Ewasko", indexLabel: "Adeline Ewasko" },
+				{  y: 2, legendText:"Cindy Foster" , indexLabel: "Cindy Foster"},
+				{  y: 3, legendText:"Alan Ford" , indexLabel: "Alan Ford"},
+				{  y: 2, legendText:"Emily Sweer" , indexLabel: "Emily Sweer"},
+				{  y: 2, legendText:"DeAnna Stesia" , indexLabel: "DeAnna Stesia"},
+
+				{  y: 2, legendText:"Jesse Castorena" , indexLabel: "Jesse Castorena"}
+			]
+		}
+		]
+	});
+	chart2.render();
+	
+	
+	var chart3 = new CanvasJS.Chart("chartContainer3",
+		{
+			zoomEnabled: true,
+                        animationEnabled: true,
+			title:{
+				text: "Engagement Matrix for Ellentv"      
+				
+			},
+			axisX: {
+				title:"Less often usage - More often usage",
+				
+				valueFormatString: "#0",
+				
+				gridThickness: 1,
+				tickThickness: 1,
+				gridColor: "lightgrey",
+				tickColor: "lightgrey",
+				lineThickness: 0
+			},
+			axisY:{
+				title: "Level of engagement",              
+				gridThickness: 1,
+				tickThickness: 1,
+				gridColor: "lightgrey",
+				tickColor: "lightgrey",
+				lineThickness: 0,                
+				valueFormatString: "#0"
+
+			},
+
+			data: [
+			{        
+				type: "bubble",                   
+				toolTipContent: "<span style='\"'color: {color};'\"'><strong>{name}</strong></span><br/><strong>Post</strong> {x} <br/> <strong>Reaction</strong> {y} ",
+				dataPoints: [
+
+				{ x: 24, y: 60586, z:100, name:"Video" },
+				{ x: 6, y: 2097, name:"Status" },
+				{ x: 20, y: 53472 ,  name:"Picture" },
+				
+				{ x: 2, y: 13652, name:"Links" }
+
+
+
+
+				]
+			}
+			]
+		});
+
+chart3.render();
+
+
+var chart4 = new CanvasJS.Chart("chartContainer4",
+		{
+			zoomEnabled: true,
+                        animationEnabled: true,
+			title:{
+				text: "Engagement Matrix for FallonTonight"      
+				
+			},
+			axisX: {
+				title:"Less often usage - More often usage",
+				
+				valueFormatString: "#0",
+				
+				gridThickness: 1,
+				tickThickness: 1,
+				gridColor: "lightgrey",
+				tickColor: "lightgrey",
+				lineThickness: 0
+			},
+			axisY:{
+				title: "Level of engagement",              
+				gridThickness: 1,
+				tickThickness: 1,
+				gridColor: "lightgrey",
+				tickColor: "lightgrey",
+				lineThickness: 0,                
+				valueFormatString: "#0"
+
+			},
+
+			data: [
+			{        
+				type: "bubble",                   
+				toolTipContent: "<span style='\"'color: {color};'\"'><strong>{name}</strong></span><br/><strong>Post</strong> {x} <br/> <strong>Reaction</strong> {y} ",
+				dataPoints: [
+
+				{ x: 88, y: 103250,z:100,  name:"Video" },
+				{ x: 1, y: 2955, name:"Status" },
+				{ x: 33, y: 19313 ,  name:"Picture" },
+				
+				{ x: 48, y: 18036, name:"Links" }
+
+
+
+
+				]
+			}
+			]
+		});
+
+chart4.render();
+
+var chart5 = new CanvasJS.Chart("chartContainer5", {
+
+			title:{
+				text:"Number of Occurrences of keywords in FallonTonight comments stream"				
+
+			},
+                        animationEnabled: true,
+			axisX:{
+				interval: 1,
+				gridThickness: 0,
+				labelFontSize: 10,
+				labelFontStyle: "normal",
+				labelFontWeight: "normal",
+				labelFontFamily: "Lucida Sans Unicode"
+
+			},
+			axisY2:{
+				interlacedColor: "rgba(1,77,101,.2)",
+				gridColor: "rgba(1,77,101,.1)"
+
+			},
+
+			data: [
+			{     
+				type: "bar",
+                name: "companies",
+				axisYType: "secondary",
+				color: "#014D65",				
+				dataPoints: [
+				
+				{y: 64, label: "Jimmy"  },
+				{y: 54, label: "Show"  },
+				{y: 37, label: "Love"  },
+				{y: 27, label: "#Maytescrusaders"  },
+				{y: 22, label: "Watch"  },
+				{y: 20, label: "Mayte"  },
+				{y: 17, label: "Garcia"  },
+				{y: 16, label: "Fallon"  },
+				{y: 16, label: "Back"  },
+				{y: 16, label: "Date"  }
+				]
+			}
+			
+			]
+		});
+
+chart5.render();
+
+var chart6 = new CanvasJS.Chart("chartContainer6", {
+
+			title:{
+				text:"Number of Occurrences of keywords in Ellentv comments stream"				
+
+			},
+                        animationEnabled: true,
+			axisX:{
+				interval: 1,
+				gridThickness: 0,
+				labelFontSize: 10,
+				labelFontStyle: "normal",
+				labelFontWeight: "normal",
+				labelFontFamily: "Lucida Sans Unicode"
+
+			},
+			axisY2:{
+				interlacedColor: "rgba(1,77,101,.2)",
+				gridColor: "rgba(1,77,101,.1)"
+
+			},
+
+			data: [
+			{     
+				type: "bar",
+                name: "companies",
+				axisYType: "secondary",
+				color: "#014D65",				
+				dataPoints: [
+				
+				{y: 79, label: "People"  },
+				{y: 99, label: "Show"  },
+				{y: 185, label: "Love"  },
+				{y: 56, label: "World"  },
+				{y: 51, label: "Women"  },
+				{y: 49, label: "Life"  },
+				{y: 43, label: "Degeneres"  },
+				{y: 41, label: "Make"  },
+				{y: 40, label: "Good"  },
+				{y: 40, label: "Happy"  }
+				]
+			}
+			
+			]
+		});
+
+chart6.render();
+
+
+
+var chart7 = new CanvasJS.Chart("chartContainer7",
+    {
+      title:{
+        text: "Emotional Level Indicator (Number of Occurrences"
+      },
+      animationEnabled: true,
+      legend: {
+        cursor:"pointer",
+        itemclick : function(e) {
+          if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+              e.dataSeries.visible = false;
+          }
+          else {
+              e.dataSeries.visible = true;
+          }
+          chart.render();
+        }
+      },
+      axisY: {
+        title: "Number of occurrences"
+      },
+      toolTip: {
+        shared: true,  
+        content: function(e){
+          var str = '';
+          var total = 0 ;
+          var str3;
+          var str2 ;
+          for (var i = 0; i < e.entries.length; i++){
+            var  str1 = "<span style= 'color:"+e.entries[i].dataSeries.color + "'> " + e.entries[i].dataSeries.name + "</span>: <strong>"+  e.entries[i].dataPoint.y + "</strong> <br/>" ; 
+            total = e.entries[i].dataPoint.y + total;
+            str = str.concat(str1);
+          }
+          str2 = "<span style = 'color:DodgerBlue; '><strong>"+e.entries[0].dataPoint.label + "</strong></span><br/>";
+          str3 = "<span style = 'color:Tomato '>Total: </span><strong>" + total + "</strong><br/>";
+          
+          return (str2.concat(str)).concat(str3);
+        }
+
+      },
+      data: [
+      {        
+        type: "bar",
+        showInLegend: true,
+        name: "Angry",
+        color: "royalblue",
+        dataPoints: [
+        { y: 4, label: "Ellentv"},
+              
+        { y: 2, label: "FallonTonight"}        
+
+
+        ]
+      },
+      {        
+        type: "bar",
+        showInLegend: true,
+        name: "Fear",
+        color: "gold",          
+        dataPoints: [
+        { y: 8, label: "Ellentv"},
+             
+        { y: 0, label: "FallonTonight"}        
+
+
+        ]
+      },
+      {        
+        type: "bar",
+        showInLegend: true,
+        name: "Surprise",
+        color: "#A57164",
+        dataPoints: [
+        { y: 12, label: "Ellentv"},
+         
+        { y: 0, label: "FallonTonight"}    
+
+        ]
+      },
+	  {        
+        type: "bar",
+        showInLegend: true,
+        name: "Disgust",
+        color: "#A52264",
+        dataPoints: [
+        { y: 0, label: "Ellentv"},
+         
+        { y: 12, label: "FallonTonight"}    
+
+        ]
+      },
+	  {        
+        type: "bar",
+        showInLegend: true,
+        name: "Happy",
+        color: "#C54320",
+        dataPoints: [
+        { y: 98, label: "Ellentv"},
+         
+        { y: 20, label: "FallonTonight"}    
+
+        ]
+      },
+	  {        
+        type: "bar",
+        showInLegend: true,
+        name: "Sad",
+        color: "#ff66cc",
+        dataPoints: [
+        { y: 45, label: "Ellentv"},
+         
+        { y: 4, label: "FallonTonight"}    
+
+        ]
+      }
+
+      ]
+    });
+
+chart7.render();
+
+
+
+
+}
+
+
+</script>
+<script type="text/javascript" src="canvasjs.min.js"></script>
+	
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">NM3239 Assignment 2</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#services">Intro</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#portfolio">FB Comparison</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">Interesting Findings</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#team">Emotion Levels</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Conclusion</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="intro-text">
+                <div class="intro-lead-in">Done by Alicia Soh</div>
+                <div class="intro-heading">The Ellen DeGeneres Show or The Tonight Show?</div>
+                <a href="#services" class="page-scroll btn btn-xl">Tell Me More</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Introduction</h2>
+                    <h3 class="section-subheading text-muted">Using Netlytic (Netlytic, 2017), Quintly (Quintly, 2017), Facebook Graph API (Facebook For Developers, 2017) as well as data from FanPageKarma.com (FanPageKarma, 2017) to collect publicly available Facebook data (posts, photos, comments, likes, etc.) from Ellentv and FallonTonight Facebook page to conduct analysis for the various questions and provide recommendations for users on the two stand-up comedy shows.</h3>
+                </div>
+            </div>
+  
+        </div>
+    </section>
+
+    <!-- Portfolio Grid Section -->
+    <section id="portfolio" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Facebook Comparison</h2>
+                    <h3 class="section-subheading text-muted">Who uploads photos and posts more frequently?
+Based on the key metrics data image (Refer to Figure 1) from Quintly, it shows that Ellen Show posts more own posts (133 posts) more frequently than compared to The Tonight Show (64 posts). Based on the pie chart image (Refer to Figure 2) from Netlytic, it shows that Ellen Show posts more own posts (30 posts) more frequently than compared to The Tonight Show (7 posts). Drilling down to the different kinds of posts, as according to Netlytic, Ellentv has more photo (10 posts) as compared to FallonTonight (0 photo posts). However, both Ellentv and FallonTonight has the same number of status/ text posts (1 post).</h3>
+               
+			   
+			   <div class="row">
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/Images/1.jpg" class="img-responsive" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Figure 1</h4>
+                        <p class="text-muted">Key Metrics Data</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/Images/2.jpg" class="img-responsive" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Figure 2</h4>
+                        <p class="text-muted">Pie Chart</p>
+                    </div>
+                </div>
+				</div>
+			   
+			   
+			   <h3 class="section-subheading text-muted">The average numbers of likes (or reactions Like, Love, Haha, Wow, Sad, Angry), shares and comments for different posts (photos, videos, and links).
+As according to FanPageKarma (FanPageKarma, 2017), the total average number of likes, shares and comments for all posts is as stated below (Refer to Figure 3). Upon further analysis (Refer to Figure 4), the total average number of reactions for Ellentv (left) for videos is 60,586, 53,472 for pictures, 13,652 for links and 2,097 for statuses. As for FallonTonight (right), the total average number of reactions for videos is 103,250, 19,313 for pictures, 18,036 for links and 2,955 for statuses. </h3>
+              
+			  			   <div class="row">
+
+			   <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/Images/3.jpg" class="img-responsive" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Figure 3</h4>
+                        <p class="text-muted">FanPageKarma Data</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/Images/4.jpg" class="img-responsive" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Figure 4</h4>
+                        <p class="text-muted">FanPageKarma Data</p>
+                    </div>
+                </div>
+				</div>
+			  
+			  <h3 class="section-subheading text-muted">Analyze the comments stream to gain insights. 
+Based on the bar chart image (Refer to Figure 5) from Netlytic, it shows that the comment stream from Ellen Show are more towards having a positive outlook on life, love, world and happiness related texts than compared to The Tonight Show. On the other hand, the comment stream from FallonTonight are more towards celebrities such as Jimmy Fallon himself as well as about the show. Moreover, the topics from Ellentv seems to be more female oriented due to the high presence of the text ‘women’. On the other hand, the topics from Fallontv seem to be more focused on the show itself and does not show any preferences towards females nor males.</h3>
+              
+					  			   <div class="row">
+
+		 <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/Images/5.jpg" class="img-responsive" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Figure 5</h4>
+                        <p class="text-muted">Bar Chart</p>
+                    </div>
+                </div>
+		</div>
+		
+		<h3 class="section-subheading text-muted">What similarities and differences can you identify between fans of these two selected pages? 
+Based on the chain network diagrams (who reply to whom) (Refer to Figure 6) from Netlytic, it shows that there is a clear difference between the fans from Ellentv and FallonTonight. For Ellentv, majority of the fans reply to Ellentv on the fan page and there is a clear interaction between fans and Ellentv. On the other hand, majority of the fans on FallonTonight fan page do not reply to FallonTonight on the fan page and there is only a small interaction between fans and FallonTonight. Thus, the difference is that, the fans from Ellentv are more interactive and participative than compared to FallonTonight.</h3>
+              					  			   <div class="row">
+
+		 <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/Images/6.jpg" class="img-responsive" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Figure 6</h4>
+                        <p class="text-muted">Chain Network Diagram</p>
+                    </div>
+                </div>
+				</div>
+				
+			   </div>
+            </div>
+			
+			
+			
+          
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Interesting Findings</h2>
+                    <h3 class="section-subheading text-muted">As according to the data from Quintly (Refer to Figure 9), there are very intense and high spikes (increase) in interaction rate for FallonTonight on 17th February, 27th February and 13th March. This is similarly followed by a sharp spike (increase) in fan change rate on 18th February, 28th February and 14th March (1 day after the high interaction rate). Upon further analysis of what caused these high interactions rate/ sudden increase in fan change rates, I noticed that on the day when there are high interaction rates, FallonTonight posted videos/ photos that fans are interested in. For example, on the 17th February, FallonTonight posted a video clip of the show featuring Robert Irwin (the late Steve Irwin’s son). As these posts catches fans’ and the public’s interest, it resulted in high interaction rates and following a change (increase) in fans change rates.</h3>
+                </div>
+            </div>
+            <div class="row">
+                <img src="img/Images/9.jpg" class="img-responsive" alt="">
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Emotion Levels</h2>
+                    <h3 class="section-subheading text-muted">As according to the bar chart (Refer to Figure 10), it shows that Ellentv has the most number of occurrences of ‘happy’ related words (98 counts) followed by ‘sad’ (45 counts) and ‘surprised’ (12 counts). As mentioned earlier, the ‘sad’ related words are misinterpreted and the actual meaning of the ‘sad’ keyword is referring to how the show (Ellentv) lights up the fans/ viewers’ day. There are occurrences of ‘fear’ and ‘angry’ related words but they appear in small amounts (8 and 4 counts respectively). Similarly, FallonTonight has the most number of occurrences for ‘happy’ related words (20 counts) and then followed by ‘disgust’ and ‘angry’ (2 counts for both) but they appear in small amounts as well. Thus, these two stand-up comedy shows are effective in evoking a ‘happy’ spirit/ emotion to their fans/ viewers as the number of occurrences of ‘happy’ related words trumps the words that evoke negative feelings. Both shows are successful in putting negative feelings such as ‘angry’ or ‘disgust’ aside. However, Ellentv has more a lot more ‘happy’ related word counts than compared to FallonTonight. As such, it is possible to conclude that the fans/ viewers experience more happy thoughts or positive feelings than compared to FallonTonight fans.</h3>
+                </div>
+            </div>
+            <div class="row">
+               
+               <img src="img/Images/10.jpg" class="img-responsive" style="height: 1000" alt="">
+<br>
+ <p>Below is the interactive version of the bar charts</p>
+
+                <div id="chartContainer7" style="height: 1000; margin-bottom:450px;"></div>
+								
+            </div>
+           
+        </div>
+    </section>
+
+  
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Conclusion</h2>
+                    <h3 class="section-subheading text-muted" style="color:#fff">From the data and analyses above, I can conclude that both stand-up comedy TV shows are indeed entertainment shows that is capable of lighting up someone’s life or bad day. Perhaps this is why such comedy shows are so addictive as fans get attached to these shows for their source of happiness or entertainment.
+I can also conclude that Ellen Show is catered more towards people who are seeking for happiness, having a positive outlook on life, needing a little boost/ positive thought to help people to get through the day. In addition, The Ellen Show is known to be friendly towards female audience. As for The Tonight Show, it is catered more towards people who are interested to see celebrity interviews or fun and games (e.g. Dance Battle, Lip Sync Battle) with celebrities. </h3>
+                    <h3 class="section-subheading text-muted" style="color:#fff">I would recommend The Ellen Show for female audiences and viewers who are interested to know more about their celebrities to watch The Tonight Show. I predict that Ellentv will experience a continuous steady increase in fans as well as interaction rate on the Facebook page. As for FallonTonight, the Facebook page will similarly experience a steady and continuous increase in fans as well as interaction rate and it will experience a sudden spike (increase) when FallonTonight posts interesting videos that entices viewers/ fans to a great extent. 
+</h3>
+
+				</div>
+            </div>
+          
+        </div>
+    </section>
+
+	
+	
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright">Copyright &copy; Alicia Soh Su Xian (A0114334U)</span>
+                </div>
+              
+            </div>
+        </div>
+    </footer>
+
+    <!-- Portfolio Modals -->
+    <!-- Use the modals below to showcase details about your portfolio projects! -->
+
+    <!-- Portfolio Modal 1 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2>Key Metrics Data</h2>
+                                <p class="item-intro text-muted">Extracted From Quintly</p>
+                                <img class="img-responsive img-centered" src="img/Images/1.jpg" alt="">
+                                <p>Based on the key metrics data image (Refer to Figure 1) from Quintly, it shows that Ellen Show posts more own posts (133 posts) more frequently than compared to The Tonight Show (64 posts).</p>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Modal 2 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="modal-body">
+                                <h2>Pie Chart</h2>
+                                <p class="item-intro text-muted">Pie chart from Netlytic</p>
+                                <img class="img-responsive img-centered" src="img/Images/2.jpg" alt="">
+                                <p>Based on the pie chart image (Refer to Figure 2) from Netlytic, it shows that Ellen Show posts more own posts (30 posts) more frequently than compared to The Tonight Show (7 posts).</p>
+ <p>Below is the interactive version of the pie charts</p>
+								<div id="chartContainer" style="height: 300px;margin-bottom: 100px;margin-left:13%"></div>
+								<br>
+								<br>
+                               	<div id="chartContainer2" style="height: 300px; width: 100%;margin-left:13%"></div>
+
+								 <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Modal 3 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2>FanPageKarma Data</h2>
+                                <p class="item-intro text-muted">Data from FanPageKarma</p>
+                                <img class="img-responsive img-centered" src="img/Images/3.jpg" alt="">
+                                <p>As according to FanPageKarma (FanPageKarma, 2017), the total average number of likes, shares and comments for all posts is as stated below (Refer to Figure 3).</p>
+                                  <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Modal 4 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2>FanPageKarma Data</h2>
+                                <p class="item-intro text-muted">Data from FanPageKarma</p>
+                                <img class="img-responsive img-centered" src="img/Images/4.jpg" alt="">
+                                <p>Upon further analysis (Refer to Figure 4), the total average number of reactions for Ellentv (left) for videos is 60,586, 53,472 for pictures, 13,652 for links and 2,097 for statuses. As for FallonTonight (right), the total average number of reactions for videos is 103,250, 19,313 for pictures, 18,036 for links and 2,955 for statuses. </p>
+                                 <p>Below is the interactive version of the bubble chart.</p>
+								<div id="chartContainer3" style="height: 300px; width: 100%;margin-left:13%"></div>
+                                   <br>
+								<br>
+								<br>
+								<br>
+								<br>
+								<br>
+								<br>
+								<br>
+								<div id="chartContainer4" style="height: 300px; width: 100%;margin-left:13%"></div>
+
+								   <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Modal 5 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2>Bar Chart</h2>
+                                <p class="item-intro text-muted">Extracted from Netlytic</p>
+                                <img class="img-responsive img-centered" src="img/Images/5.jpg" alt="">
+                                <p>Analyze the comments stream to gain insights. Based on the bar chart image (Refer to Figure 5) from Netlytic, it shows that the comment stream from Ellen Show are more towards having a positive outlook on life, love, world and happiness related texts than compared to The Tonight Show. On the other hand, the comment stream from FallonTonight are more towards celebrities such as Jimmy Fallon himself as well as about the show. Moreover, the topics from Ellentv seems to be more female oriented due to the high presence of the text ‘women’. On the other hand, the topics from Fallontv seem to be more focused on the show itself and does not show any preferences towards females nor males.</p>
+                                 <p>Below is the interactive version of the bar charts.</p>
+
+								<div id="chartContainer6" style="height: 300px;margin-bottom: 100px;margin-left:13%"></div>
+								<br>
+								<br>
+                               	<div id="chartContainer5" style="height: 300px; width: 100%;margin-left:13%"></div>
+								<button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Modal 6 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2>Chain Network Diagram (Who reply to whom)</h2>
+                                <p class="item-intro text-muted">Extracted from Netlytic</p>
+                                <img class="img-responsive img-centered" src="img/Images/6.jpg" alt="">
+                                <p>What similarities and differences can you identify between fans of these two selected pages? Based on the chain network diagrams (who reply to whom) (Refer to Figure 6) from Netlytic, it shows that there is a clear difference between the fans from Ellentv and FallonTonight. For Ellentv, majority of the fans reply to Ellentv on the fan page and there is a clear interaction between fans and Ellentv. On the other hand, majority of the fans on FallonTonight fan page do not reply to FallonTonight on the fan page and there is only a small interaction between fans and FallonTonight. Thus, the difference is that, the fans from Ellentv are more interactive and participative than compared to FallonTonight.</p>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	
+	<!-- Metis Menu Plugin JavaScript -->
+    <script src="vendor/metisMenu/metisMenu.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" integrity="sha384-mE6eXfrb8jxl0rzJDBRanYqgBxtJ6Unn4/1F7q4xRRyIw7Vdg9jP4ycT7x1iVsgb" crossorigin="anonymous"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/agency.min.js"></script>
+	
+	
+
+</body>
+
+</html>

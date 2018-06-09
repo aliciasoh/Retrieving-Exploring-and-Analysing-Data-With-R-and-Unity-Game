@@ -1,0 +1,11 @@
+Hello Professor and Teaching Assistants,
+
+Here are some instrutions/ details on how to view my assignment submissions:
+1. NM3239 Assignment 2 Word Document Report
+	- Word document file: NM3239 Assignment 2 Alicia Soh Su Xian A0114334U.docx
+
+Additional visualisation based on my speciality:
+2. R Project
+	- Inside the folder: Assignment2_Rproject
+3. Website
+	- Inside the folder: Website

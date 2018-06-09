@@ -1,0 +1,20 @@
+Hello,
+
+For easier reference and understanding, 
+these are my Assignment 1 Submission Files and its respective details:
+
+To view the Report:
+NM3239_Assignment1.docx
+
+To view the Full Report With Graphs, Charts, Calculations and Analysis:
+NM3239.html
+
+Source Code:
+NM3239.Rmd
+
+To view the Interactive version of my report:
+https://aliciasoh.shinyapps.io/nm3239/
+
+Source Codes:
+server.R
+ui.R
